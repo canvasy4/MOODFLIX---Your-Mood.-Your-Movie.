@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moodflix — Your Mood. Your Movie.</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="mf-nav" id="navbar">
+    <div class="mf-nav-brand">
+      <img src="assets/M logo.png">
+    </div>
+
+    <ul class="mf-nav-links">
+      <li><a href="index.html" class="mf-nav-link active">Home</a></li>
+      <li><a href="movie.html" class="mf-nav-link">Movie</a></li>
+      <li><a href="about.html" class="mf-nav-link">About</a></li>
+    </ul>
+
+    <div class="mf-nav-right">
+      <a href="#myListModal" class="mf-btn mf-btn-ghost" style="font-size:12px; padding:8px 16px;" id="myListBtn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        My List <span id="myListCount" style="background:#E50914; color:#fff; border-radius:999px; font-size:10px; padding:1px 6px; margin-left:2px; display:none;">0</span>
+      </a>
+    </div>
+  </nav>
+
+
+  <!-- ===== HERO ===== -->  
+  <section class="mf-hero" id="home">
+    <div class="mf-hero-bg">
+      <div class="mf-hero-slider">
+        <img src="assets/Avatar Landscape.jpg">
+      </div>
+      <div class="mf-hero-vignette"></div>
+    </div>
+
+    <div class="mf-hero-content">
+      <div class="mf-eyebrow">
+        <span class="mf-live-dot">●</span> NOW PLAYING &middot; TRAILER
+      </div>
+
+      <h1 class="mf-hero-title">Avatar : The Way of Water</h1>
+
+      <div class="mf-hero-meta">
+        <span class="mf-badge-match">7.5/10</span>
+        <span>2022</span>
+        <span class="mf-dot">·</span>
+        <span>13+</span>
+        <span class="mf-dot">·</span>
+        <span>3h 12m</span>
+        <span class="mf-dot">·</span>
+        <span>Adventure · Fantasy</span>
+      </div>
+
+      <p class="mf-hero-blurb">
+        Jake Sully dan Neytiri yang kini hidup sebagai keluarga di Pandora bersama anak-anak mereka. Lebih dari satu dekade setelah ...
+      </p>
+
+      <div class="mf-hero-actions">
+        <a href="#trailer-avatar" class="mf-btn mf-btn-primary">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l14 8-14 8V4z"/></svg>
+          Watch Trailer
+        </a>
+        <a href="#favModal" class="mf-btn mf-btn-ghost1 add-to-list"
+          data-title="Avatar : The Way of Water"
+          data-meta="2022 · 13+ · 3h 12m"
+          data-poster="assets/posters/adv10.jpg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </a>
+        <a href="#infoModal-avatar" class="mf-btn mf-btn-ghost1">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 11v5M12 8v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </a>        
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TOP 10 ROW ===== -->
+  <section class="mf-row" id="top10">
+    <div class="mf-row-header">
+      <div>
+        <div class="mf-eyebrow-label">This week</div>
+        <h2 class="mf-row-title">Top 10 Movies Right Now</h2>
+      </div>
+    </div>
+
+    <div class="mf-scroller mf-top10-scroller">
+      
+      <div class="mf-top10-item">
+        <div class="mf-top10-rank">1</div>
+        <div class="mf-card">
+          <img class="mf-card-poster-img" src="assets/posters/Top 1.jpg" alt="Peaky Blinders">
+          <div class="mf-card-overlay">
+            <video class="mf-card-video" src="assets/trailer.mp4" muted loop playsinline></video>
+            <div class="mf-card-live">● TRAILER</div>
+            <div class="mf-card-trailer-info">
+              <div class="mf-card-trailer-title">Peaky Blinders</div>
+              <div class="mf-card-trailer-meta"><span style="color:#4ade80;font-weight:700">8.8/10</span> · 2013 · 18+</div>
+              <div class="mf-card-actions">
+                <a href="#trailer-pb" class="mf-icon-btn mf-icon-btn-play">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l14 8-14 8V4z"/></svg>
+                </a>
+                <a href="#favModal" class="mf-icon-btn add-to-list"
+                  data-title="Peaky Blinders"
+                  data-meta="2013 · 18+ · 6 episodes"
+                  data-poster="assets/posters/Top 1.jpg">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </a>
+                <a href="#infoModal-pb" class="mf-icon-btn">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 11v5M12 8v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="mf-card-bottom">
+            <div class="mf-card-title">Peaky Blinders</div>
+            <div class="mf-card-meta">2013 · 18+ · 6 episodes</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mf-top10-item">
+        <div class="mf-top10-rank">2</div>
+        <div class="mf-card">
+          <img class="mf-card-poster-img" src="assets/posters/Top 2.jpg" alt="Bloodhounds">
+          <div class="mf-card-overlay">
+            <video class="mf-card-video" src="assets/trailer.mp4" muted loop playsinline></video>
+            <div class="mf-card-live">● TRAILER</div>
+            <div class="mf-card-trailer-info">
+              <div class="mf-card-trailer-title">Bloodhounds</div>
+              <div class="mf-card-trailer-meta"><span style="color:#4ade80;font-weight:700">8.2/10</span> · 2023 · 18+</div>
+              <div class="mf-card-actions">
+                <a href="#trailer-blood" class="mf-icon-btn mf-icon-btn-play">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l14 8-14 8V4z"/></svg>
+                </a>
+                <a href="#favModal" class="mf-icon-btn add-to-list"
+                  data-title="Bloodhounds"
+                  data-meta="2023 · 18+ · 7 episodes"
+                  data-poster="assets/posters/Top 2.jpg">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </a>
+                <a href="#infoModal-blood" class="mf-icon-btn">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 11v5M12 8v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="mf-card-bottom">
+            <div class="mf-card-title">Bloodhounds</div>
+            <div class="mf-card-meta">2023 · 18+ · 7 episodes</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mf-top10-item">
+        <div class="mf-top10-rank">3</div>
+        <div class="mf-card">
+          <img class="mf-card-poster-img" src="assets/posters/Top 3.jpg" alt="Wednesday">
+          <div class="mf-card-overlay">
+            <video class="mf-card-video" src="assets/trailer.mp4" muted loop playsinline></video>
+            <div class="mf-card-live">● TRAILER</div>
+            <div class="mf-card-trailer-info">
+              <div class="mf-card-trailer-title">Wednesday</div>
+              <div class="mf-card-trailer-meta"><span style="color:#4ade80;font-weight:700">8.1/10</span> · 2022 · 13+</div>
+              <div class="mf-card-actions">
+                <a href="#trailer-w" class="mf-icon-btn mf-icon-btn-play">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l14 8-14 8V4z"/></svg>
+                </a>
+                <a href="#favModal" class="mf-icon-btn add-to-list"
+                  data-title="Wednesday"
+                  data-meta="2022 · 13+ · 8 episodes"
+                  data-poster="assets/posters/Top 3.jpg">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </a>
+                <a href="#infoModal-w" class="mf-icon-btn">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 11v5M12 8v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </a>  
+              </div>
+            </div>
+          </div>
+          <div class="mf-card-bottom">
+            <div class="mf-card-title">Wednesday</div>
+            <div class="mf-card-meta">2022 · 13+ · 8 episodes</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mf-top10-item">
+        <div class="mf-top10-rank">4</div>
+        <div class="mf-card">
+          <img class="mf-card-poster-img" src="assets/posters/Top 4.jpg" alt="KPop Demon Hunters">
+          <div class="mf-card-overlay">
+            <video class="mf-card-video" src="assets/trailer.mp4" muted loop playsinline></video>
+            <div class="mf-card-live">● TRAILER</div>
+            <div class="mf-card-trailer-info">
+              <div class="mf-card-trailer-title">KPop Demon Hunters</div>
+              <div class="mf-card-trailer-meta"><span style="color:#4ade80;font-weight:700">7.4/10</span> · 2025 · 10+</div>
+              <div class="mf-card-actions">
+                <a href="#trailer-kdh" class="mf-icon-btn mf-icon-btn-play">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l14 8-14 8V4z"/></svg>
+                </a>
+                <a href="#favModal" class="mf-icon-btn add-to-list"
+                  data-title="KPop Demon Hunters"
+                  data-meta="2025 · 10+ · 1h 35m"
+                  data-poster="assets/posters/Top 4.jpg">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </a>
+                <a href="#infoModal-kdh" class="mf-icon-btn">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 11v5M12 8v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </a>  
+              </div>
+            </div>
+          </div>
+          <div class="mf-card-bottom">
+            <div class="mf-card-title">KPop Demon Hunters</div>
+            <div class="mf-card-meta">2025 · 10+ · 1h 35m</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mf-top10-item">
+        <div class="mf-top10-rank">5</div>
+        <div class="mf-card">
+          <img class="mf-card-poster-img" src="assets/posters/Top 5.jpg" alt="The Bone Temple">
+          <div class="mf-card-overlay">
+            <video class="mf-card-video" src="assets/trailer.mp4" muted loop playsinline></video>
+            <div class="mf-card-live">● TRAILER</div>
+            <div class="mf-card-trailer-info">
+              <div class="mf-card-trailer-title">The Bone Temple</div>
+              <div class="mf-card-trailer-meta"><span style="color:#4ade80;font-weight:700">7.3/10</span> · 2024 · 17+</div>
+              <div class="mf-card-actions">
+                <a href="#trailer-tbt" class="mf-icon-btn mf-icon-btn-play">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l14 8-14 8V4z"/></svg>
+                </a>
+                <a href="#favModal" class="mf-icon-btn add-to-list"
+                  data-title="The Bone Temple"
+                  data-meta="2024 · 17+ · 1h 20m"
+                  data-poster="assets/posters/Top 5.jpg">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </a>
+                <a href="#infoModal-tbt" class="mf-icon-btn">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 11v5M12 8v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </a>  
+              </div>
+            </div>
+          </div>
+          <div class="mf-card-bottom">
+            <div class="mf-card-title">The Bone Temple</div>
+            <div class="mf-card-meta">2024 · 17+ · 1h 20m</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mf-top10-item">
+        <div class="mf-top10-rank">6</div>
+        <div class="mf-card">
+          <img class="mf-card-poster-img" src="assets/posters/Top 6.jpg" alt="Abigail">
+          <div class="mf-card-overlay">
+            <video class="mf-card-video" src="assets/trailer.mp4" muted loop playsinline></video>
+            <div class="mf-card-live">● TRAILER</div>
+            <div class="mf-card-trailer-info">
+              <div class="mf-card-trailer-title">Abigail</div>
+              <div class="mf-card-trailer-meta"><span style="color:#4ade80;font-weight:700">6.6/10</span> · 2024 · 17+</div>
+              <div class="mf-card-actions">
+                <a href="#trailer-abigail" class="mf-icon-btn mf-icon-btn-play">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l14 8-14 8V4z"/></svg>
+                </a>
+                <a href="#favModal" class="mf-icon-btn add-to-list"
+                  data-title="Abigail"
+                  data-meta="2024 · 17+ · 1h 49m"
+                  data-poster="assets/posters/Top 6.jpg">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </a>
+                <a href="#infoModal-abigail" class="mf-icon-btn">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 11v5M12 8v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </a>  
+              </div>
+            </div>
+          </div>
+          <div class="mf-card-bottom">
+            <div class="mf-card-title">Abigail</div>
+            <div class="mf-card-meta">2024 · 17+ · 1h 49m</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mf-top10-item">
+        <div class="mf-top10-rank">7</div>
+        <div class="mf-card">
+          <img class="mf-card-poster-img" src="assets/posters/Top 7.jpg" alt="Fall">
+          <div class="mf-card-overlay">
+            <video class="mf-card-video" src="assets/trailer.mp4" muted loop playsinline></video>
+            <div class="mf-card-live">● TRAILER</div>
+            <div class="mf-card-trailer-info">
+              <div class="mf-card-trailer-title">Fall</div>
+              <div class="mf-card-trailer-meta"><span style="color:#4ade80;font-weight:700">6.4/10</span> · 2022 · 13+</div>
+              <div class="mf-card-actions">
+                <a href="#trailer-fall" class="mf-icon-btn mf-icon-btn-play">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l14 8-14 8V4z"/></svg>
+                </a>
+                <a href="#favModal" class="mf-icon-btn add-to-list"
+                  data-title="Fall"
+                  data-meta="2022 · 13+ · 1h 47m"
+                  data-poster="assets/posters/Top 7.jpg">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </a>
+                <a href="#infoModal-fall" class="mf-icon-btn">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 11v5M12 8v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </a>  
+              </div>
+            </div>
+          </div>
+          <div class="mf-card-bottom">
+            <div class="mf-card-title">Fall</div>
+            <div class="mf-card-meta">2022 · 13+ · 1h 47m</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mf-top10-item">
+        <div class="mf-top10-rank">8</div>
+        <div class="mf-card">
+          <img class="mf-card-poster-img" src="assets/posters/Top 8.jpg" alt="Apex">
+          <div class="mf-card-overlay">
+            <video class="mf-card-video" src="assets/trailer.mp4" muted loop playsinline></video>
+            <div class="mf-card-live">● TRAILER</div>
+            <div class="mf-card-trailer-info">
+              <div class="mf-card-trailer-title">Apex</div>
+              <div class="mf-card-trailer-meta"><span style="color:#4ade80;font-weight:700">6.2/10</span> · 2021 · 17+</div>
+              <div class="mf-card-actions">
+                <a href="#trailer-apex" class="mf-icon-btn mf-icon-btn-play">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l14 8-14 8V4z"/></svg>
+                </a>
+                <a href="#favModal" class="mf-icon-btn add-to-list"
+                  data-title="Apex"
+                  data-meta="2021 · 17+ · 1h 48m"
+                  data-poster="assets/posters/Top 8.jpg">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </a>
+                <a href="#infoModal-apex" class="mf-icon-btn">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 11v5M12 8v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </a>  
+              </div>
+            </div>
+          </div>
+          <div class="mf-card-bottom">
+            <div class="mf-card-title">Apex</div>
+            <div class="mf-card-meta">2021 · 17+ · 1h 48m</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mf-top10-item">
+        <div class="mf-top10-rank">9</div>
+        <div class="mf-card">
+          <img class="mf-card-poster-img" src="assets/posters/Top 9.jpg" alt="If Wishes Could Kill">
+          <div class="mf-card-overlay">
+            <video class="mf-card-video" src="assets/trailer.mp4" muted loop playsinline></video>
+            <div class="mf-card-live">● TRAILER</div>
+            <div class="mf-card-trailer-info">
+              <div class="mf-card-trailer-title">If Wishes Could Kill</div>
+              <div class="mf-card-trailer-meta"><span style="color:#4ade80;font-weight:700">5.6/10</span> · 2026 · 13+</div>
+              <div class="mf-card-actions">
+                <a href="#trailer-iwck" class="mf-icon-btn mf-icon-btn-play">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l14 8-14 8V4z"/></svg>
+                </a>
+                <a href="#favModal" class="mf-icon-btn add-to-list"
+                  data-title="If Wishes Could Kill"
+                  data-meta="2026 · 13+ · 8 episodes"
+                  data-poster="assets/posters/Top 9.jpg">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </a>
+                <a href="#infoModal-iwck" class="mf-icon-btn">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 11v5M12 8v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </a>  
+              </div>
+            </div>
+          </div>
+          <div class="mf-card-bottom">
+            <div class="mf-card-title">If Wishes Could Kill</div>
+            <div class="mf-card-meta">2026 · 13+ · 8 episodes</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mf-top10-item">
+        <div class="mf-top10-rank">10</div>
+        <div class="mf-card">
+          <img class="mf-card-poster-img" src="assets/posters/Top 10.jpg" alt="Thrash">
+          <div class="mf-card-overlay">
+            <video class="mf-card-video" src="assets/trailer.mp4" muted loop playsinline></video>
+            <div class="mf-card-live">● TRAILER</div>
+            <div class="mf-card-trailer-info">
+              <div class="mf-card-trailer-title">Thrash</div>
+              <div class="mf-card-trailer-meta"><span style="color:#4ade80;font-weight:700">5.2/10</span> · 2022 · 17+</div>
+              <div class="mf-card-actions">
+                <a href="#trailer-thrash" class="mf-icon-btn mf-icon-btn-play">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l14 8-14 8V4z"/></svg>
+                </a>
+                <a href="#favModal" class="mf-icon-btn add-to-list"
+                  data-title="Thrash"
+                  data-meta="2022 · 17+ · 1h 28m"
+                  data-poster="assets/posters/Top 10.jpg">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </a>
+                <a href="#infoModal-thrash" class="mf-icon-btn">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 11v5M12 8v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </a>  
+              </div>
+            </div>
+          </div>
+          <div class="mf-card-bottom">
+            <div class="mf-card-title">Thrash</div>
+            <div class="mf-card-meta">2022 · 17+ · 1h 28m</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="mf-footer">
+    <div class="mf-footer-grid">
+      <div>
+        <img src="assets/logoM.png">
+        <div class="mf-footer-tagline">— YOUR MOOD. YOUR MOVIE. —</div>
+      </div>
+      <div>
+        <h4>Browse</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html #top10">Top 10</a></li>
+          <li><a href="movie.html">Discover by Mood</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="about.html #team">The Team</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mf-footer-bottom">
+      <span>© 2026 Moodflix — a web programming course project</span>
+    </div>
+  </footer>
+
+
+
+  <!-- Trailer Modal -->
+<!--trailer homepage-->
+  <div class="mf-modal" id="trailer-avatar">
+    <a href="#close" class="mf-modal-backdrop"></a>
+    <div class="mf-modal-box">
+      <div class="mf-modal-header">
+        <div class="mf-modal-title">
+          <span class="mf-live-dot">●</span> PLAYING TRAILER
+        </div>
+        <a href="#close" class="mf-modal-close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+      <video class="mf-modal-video" src="trailer/avatar.mp4" controls></video>
+    </div>
+  </div>
+
+  <!--trailer butterfly era-->
+<!--trailer true beauty-->
+  <div class="mf-modal" id="trailer-tb">
+    <a href="#close" class="mf-modal-backdrop"></a>
+    <div class="mf-modal-box">
+      <div class="mf-modal-header">
+        <div class="mf-modal-title">
+          <span class="mf-live-dot">●</span> PLAYING TRAILER
+        </div>
+        <a href="#close" class="mf-modal-close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+      <video class="mf-modal-video" src="assets/trailer/True Beauty.mp4" controls></video>
+    </div>
+  </div>
+
+
+  <!--- Fav Modal -->
+  <div class="mf-modal" id="favModal">
+    <a href="#close" class="mf-modal-backdrop"></a>
+    <div class="mf-modal-box" style="max-width:380px;">
+      <div class="mf-modal-header">
+        <div class="mf-modal-title">
+          <span class="mf-live-dot">●</span> MY LIST
+        </div>
+        <a href="#close" class="mf-modal-close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+      <div style="padding:32px 24px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:16px;">
+        <div style="width:56px; height:56px; border-radius:50%; background:rgba(229,9,20,0.12); border:1px solid rgba(229,9,20,0.35); display:grid; place-items:center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M12 5v14M5 12h14" stroke="#E50914" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif; font-size:28px; margin-bottom:8px;">Added to My List</div>
+          <div style="font-size:13px; color:#888; line-height:1.7;">Film berhasil disimpan.<br>Lihat semua di <span style="color:#E50914;">My List</span>.</div>
+        </div>
+        <a href="#" class="mf-btn mf-btn-primary" style="font-size:13px; padding:10px 32px;">Done</a>
+      </div>
+    </div>
+  </div>
+
+
+  <!--info TOP 10-->
+<!--info Peaky Blinders-->
+  <div class="mf-modal" id="infoModal-pb">
+    <a href="#close" class="mf-modal-backdrop"></a>
+    <div class="mf-modal-box" style="max-width:1000px;">
+      <div class="mf-modal-header">
+        <div class="mf-modal-title">
+          <span class="mf-live-dot">●</span> MOVIE INFO
+        </div>
+        <a href="#close" class="mf-modal-close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+      <div style="display:flex;">
+        <img src="assets/posters/Top 1.jpg" alt="Peaky Blinders"
+          style="width:200px; flex-shrink:0; object-fit:cover;">
+        <div style="padding:24px; display:flex; flex-direction:column; gap:14px;">
+          <div>
+            <div style="font-size:11px; letter-spacing:0.22em; color:#E50914; font-weight:700; margin-bottom:6px;">CRIME · DRAMA</div>
+            <h2 style="font-family:'Bebas Neue',sans-serif; font-size:34px; line-height:1;">Peaky Blinders</h2>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; font-size:13px; color:#bbb; align-items:center;">
+            <span style="background:rgba(34,197,94,0.15); color:#4ade80; border:1px solid rgba(34,197,94,0.3); padding:3px 9px; border-radius:4px; font-weight:700; font-size:11px;">8.8/10</span>
+            <span>2022</span><span style="color:#E50914">·</span>
+            <span>18+</span><span style="color:#E50914">·</span>
+            <span>6 Episodes</span>
+          </div>
+          <p style="font-size:14px; color:#ccc; line-height:1.7;">
+          Perjalanan keluarga Shelby yang dipimpin oleh Thomas Shelby. Dengan kecerdasan strategis dan ambisi besar, mereka membangun kerajaan bisnis ilegal yang perlahan merambah ke dunia politik. 
+          Sepanjang perjalanan, mereka menghadapi konflik internal keluarga, pengkhianatan, serta tekanan dari aparat hukum dan musuh berbahaya yang ingin menjatuhkan mereka. Atmosfer gelap dan penuh 
+          intrik membuat kisah ini semakin intens dan memikat.
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:13px;">
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">CAST</div>
+              <div style="color:#ddd;">Cillian Murphy, Paul Anderson, Helen McCrory</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">GENRE</div>
+              <div style="color:#ddd;">Crime, Drama</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">IMDB</div>
+              <div style="color:#ddd;">8.8/10</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">LANGUAGE</div>
+              <div style="color:#ddd;">English</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:10px; margin-top:4px;">
+            <a href="#favModal" class="mf-btn mf-btn-ghost" style="font-size:13px; padding:10px 20px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Add to List
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--info Wednesday -->
+  <div class="mf-modal" id="infoModal-w">
+    <a href="#close" class="mf-modal-backdrop"></a>
+    <div class="mf-modal-box" style="max-width:1000px;">
+      <div class="mf-modal-header">
+        <div class="mf-modal-title">
+          <span class="mf-live-dot">●</span> MOVIE INFO
+        </div>
+        <a href="#close" class="mf-modal-close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+      <div style="display:flex;">
+        <img src="assets/posters/Top 3.jpg" alt="Wednesday"
+          style="width:200px; flex-shrink:0; object-fit:cover;">
+        <div style="padding:24px; display:flex; flex-direction:column; gap:14px;">
+          <div>
+            <div style="font-size:11px; letter-spacing:0.22em; color:#E50914; font-weight:700; margin-bottom:6px;">MYSTERY · HORROR</div>
+            <h2 style="font-family:'Bebas Neue',sans-serif; font-size:34px; line-height:1;">Wednesday</h2>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; font-size:13px; color:#bbb; align-items:center;">
+            <span style="background:rgba(34,197,94,0.15); color:#4ade80; border:1px solid rgba(34,197,94,0.3); padding:3px 9px; border-radius:4px; font-weight:700; font-size:11px;">8.1/10</span>
+            <span>2022</span><span style="color:#E50914">·</span>
+            <span>13+</span><span style="color:#E50914">·</span>
+            <span>8 Episodes</span>
+          </div>
+          <p style="font-size:14px; color:#ccc; line-height:1.7;">
+          Wednesday Addams dikirim ke Akademi Nevermore, sebuah sekolah bagi siswa dengan kemampuan unik. Di sana, ia berusaha mengendalikan kekuatan psikisnya sekaligus beradaptasi dengan lingkungan 
+          baru yang penuh keanehan. Kepribadiannya yang dingin dan cerdas membawanya terlibat dalam penyelidikan serangkaian pembunuhan misterius yang ternyata berkaitan erat dengan sejarah keluarganya. 
+          Seiring waktu, ia mulai mengungkap rahasia kelam yang tersembunyi di balik sekolah tersebut.
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:13px;">
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">CAST</div>
+              <div style="color:#ddd;">Jenna Ortega, Emma Myers, Catherine Zeta-Jones, Luis Guzmán</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">GENRE</div>
+              <div style="color:#ddd;">Comedy, Horror, Mystery, Supernatural</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">IMDB</div>
+              <div style="color:#ddd;">8.1/10</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">LANGUAGE</div>
+              <div style="color:#ddd;">English</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:10px; margin-top:4px;">
+            <a href="#favModal" class="mf-btn mf-btn-ghost" style="font-size:13px; padding:10px 20px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Add to List
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--info Bloodhounds  -->
+  <div class="mf-modal" id="infoModal-blood">
+    <a href="#close" class="mf-modal-backdrop"></a>
+    <div class="mf-modal-box" style="max-width:1000px;">
+      <div class="mf-modal-header">
+        <div class="mf-modal-title">
+          <span class="mf-live-dot">●</span> MOVIE INFO
+        </div>
+        <a href="#close" class="mf-modal-close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+      <div style="display:flex;">
+        <img src="assets/posters/Top 2.jpg" alt="Bloodhounds "
+          style="width:200px; flex-shrink:0; object-fit:cover;">
+        <div style="padding:24px; display:flex; flex-direction:column; gap:14px;">
+          <div>
+            <div style="font-size:11px; letter-spacing:0.22em; color:#E50914; font-weight:700; margin-bottom:6px;">ACTION · CRIME</div>
+            <h2 style="font-family:'Bebas Neue',sans-serif; font-size:34px; line-height:1;">Bloodhounds</h2>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; font-size:13px; color:#bbb; align-items:center;">
+            <span style="background:rgba(34,197,94,0.15); color:#4ade80; border:1px solid rgba(34,197,94,0.3); padding:3px 9px; border-radius:4px; font-weight:700; font-size:11px;">8.1/10</span>
+            <span>2023</span><span style="color:#E50914">·</span>
+            <span>18+</span><span style="color:#E50914">·</span>
+            <span>7 Episodes</span>
+          </div>
+          <p style="font-size:14px; color:#ccc; line-height:1.7;">
+          Dua petinju muda yang penuh semangat terseret ke dunia rentenir ilegal setelah keluarga mereka menjadi korban penipuan. Demi membalas dan melindungi orang-orang yang mereka sayangi, 
+          mereka bergabung dengan pihak yang lebih kuat untuk melawan jaringan kriminal berbahaya. Perjalanan mereka dipenuhi aksi brutal, persahabatan yang erat, serta pengorbanan besar di 
+          tengah dunia yang keras dan tidak kenal ampun.
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:13px;">
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">CAST</div>
+              <div style="color:#ddd;">Woo Do-hwan, Lee Sang-yi, Park Sung-woong</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">GENRE</div>
+              <div style="color:#ddd;">Action, Crime, Drama</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">IMDB</div>
+              <div style="color:#ddd;">8.1/10</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">LANGUAGE</div>
+              <div style="color:#ddd;">Korean</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:10px; margin-top:4px;">
+            <a href="#favModal" class="mf-btn mf-btn-ghost" style="font-size:13px; padding:10px 20px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Add to List
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--info KPop Demon Hunters  -->
+  <div class="mf-modal" id="infoModal-kdh">
+    <a href="#close" class="mf-modal-backdrop"></a>
+    <div class="mf-modal-box" style="max-width:1000px;">
+      <div class="mf-modal-header">
+        <div class="mf-modal-title">
+          <span class="mf-live-dot">●</span> MOVIE INFO
+        </div>
+        <a href="#close" class="mf-modal-close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+      <div style="display:flex;">
+        <img src="assets/posters/Top 4.jpg" alt="KPop Demon Hunters"
+          style="width:200px; flex-shrink:0; object-fit:cover;">
+        <div style="padding:24px; display:flex; flex-direction:column; gap:14px;">
+          <div>
+            <div style="font-size:11px; letter-spacing:0.22em; color:#E50914; font-weight:700; margin-bottom:6px;">ANIMATION · MUSICAL</div>
+            <h2 style="font-family:'Bebas Neue',sans-serif; font-size:34px; line-height:1;">KPop Demon Hunters</h2>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; font-size:13px; color:#bbb; align-items:center;">
+            <span style="background:rgba(34,197,94,0.15); color:#4ade80; border:1px solid rgba(34,197,94,0.3); padding:3px 9px; border-radius:4px; font-weight:700; font-size:11px;">7.4/10</span>
+            <span>2025</span><span style="color:#E50914">·</span>
+            <span>10+</span><span style="color:#E50914">·</span>
+            <span>1hr 35m</span>
+          </div>
+          <p style="font-size:14px; color:#ccc; line-height:1.7;">
+          Kehidupan ganda sebuah girl group K-pop yang sedang naik daun. Di balik gemerlap panggung, mereka adalah pemburu iblis yang melindungi dunia dari ancaman supranatural. Dengan kekuatan 
+          yang terinspirasi dari musik dan tarian mereka, grup ini harus menyeimbangkan tekanan industri hiburan dengan misi berbahaya. Ceritanya menyoroti kerja sama tim, identitas diri, serta
+          perjuangan menghadapi sisi gelap dunia yang tersembunyi.
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:13px;">
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">CAST</div>
+              <div style="color:#ddd;">Arden Cho, Liza Koshy, May Hong</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">GENRE</div>
+              <div style="color:#ddd;">Animation, Musical, Drama</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">IMDB</div>
+              <div style="color:#ddd;">7.4/10</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">LANGUAGE</div>
+              <div style="color:#ddd;">English</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:10px; margin-top:4px;">
+            <a href="#favModal" class="mf-btn mf-btn-ghost" style="font-size:13px; padding:10px 20px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Add to List
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--info The Bone Temple  -->
+  <div class="mf-modal" id="infoModal-tbt">
+    <a href="#close" class="mf-modal-backdrop"></a>
+    <div class="mf-modal-box" style="max-width:1000px;">
+      <div class="mf-modal-header">
+        <div class="mf-modal-title">
+          <span class="mf-live-dot">●</span> MOVIE INFO
+        </div>
+        <a href="#close" class="mf-modal-close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+      <div style="display:flex;">
+        <img src="assets/posters/Top 5.jpg" alt="The Bone Temple"
+          style="width:200px; flex-shrink:0; object-fit:cover;">
+        <div style="padding:24px; display:flex; flex-direction:column; gap:14px;">
+          <div>
+            <div style="font-size:11px; letter-spacing:0.22em; color:#E50914; font-weight:700; margin-bottom:6px;">HORROR</div>
+            <h2 style="font-family:'Bebas Neue',sans-serif; font-size:34px; line-height:1;">The Bone Temple</h2>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; font-size:13px; color:#bbb; align-items:center;">
+            <span style="background:rgba(34,197,94,0.15); color:#4ade80; border:1px solid rgba(34,197,94,0.3); padding:3px 9px; border-radius:4px; font-weight:700; font-size:11px;">7.4/10</span>
+            <span>2024</span><span style="color:#E50914">·</span>
+            <span>17+</span><span style="color:#E50914">·</span>
+            <span>1hr 20m</span>
+          </div>
+          <p style="font-size:14px; color:#ccc; line-height:1.7;">
+          Sekelompok peneliti menemukan sebuah kuil kuno tersembunyi yang dikenal sebagai Kuil Tulang. Awalnya dianggap sebagai penemuan arkeologi biasa, mereka segera menyadari bahwa tempat 
+          tersebut adalah penjara bagi kekuatan jahat. Teror mulai muncul dalam bentuk penampakan mengerikan dan jebakan mematikan. Untuk bertahan hidup, mereka harus memecahkan teka-teki kuno 
+          sebelum menjadi korban berikutnya dari kutukan kuil tersebut.
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:13px;">
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">CAST</div>
+              <div style="color:#ddd;">Arlyn Moore, David J. Plescia, Sheri Davis</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">GENRE</div>
+              <div style="color:#ddd;">Horror</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">IMDB</div>
+              <div style="color:#ddd;">7.3/10</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">LANGUAGE</div>
+              <div style="color:#ddd;">English</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:10px; margin-top:4px;">
+            <a href="#favModal" class="mf-btn mf-btn-ghost" style="font-size:13px; padding:10px 20px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Add to List
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--info Abigail  -->
+  <div class="mf-modal" id="infoModal-abigail">
+    <a href="#close" class="mf-modal-backdrop"></a>
+    <div class="mf-modal-box" style="max-width:1000px;">
+      <div class="mf-modal-header">
+        <div class="mf-modal-title">
+          <span class="mf-live-dot">●</span> MOVIE INFO
+        </div>
+        <a href="#close" class="mf-modal-close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+      <div style="display:flex;">
+        <img src="assets/posters/Top 6.jpg" alt="Abigail"
+          style="width:200px; flex-shrink:0; object-fit:cover;">
+        <div style="padding:24px; display:flex; flex-direction:column; gap:14px;">
+          <div>
+            <div style="font-size:11px; letter-spacing:0.22em; color:#E50914; font-weight:700; margin-bottom:6px;">HORROR</div>
+            <h2 style="font-family:'Bebas Neue',sans-serif; font-size:34px; line-height:1;">Abigail</h2>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; font-size:13px; color:#bbb; align-items:center;">
+            <span style="background:rgba(34,197,94,0.15); color:#4ade80; border:1px solid rgba(34,197,94,0.3); padding:3px 9px; border-radius:4px; font-weight:700; font-size:11px;">6.6/10</span>
+            <span>2024</span><span style="color:#E50914">·</span>
+            <span>17+</span><span style="color:#E50914">·</span>
+            <span>1hr 49m</span>
+          </div>
+          <p style="font-size:14px; color:#ccc; line-height:1.7;">
+          Sekelompok penjahat menculik seorang gadis balerina demi uang tebusan besar. Mereka mengurungnya di rumah terpencil, namun situasi berubah drastis ketika terungkap bahwa gadis tersebut 
+          bukan manusia biasa. Para penculik mulai menjadi korban satu per satu dalam permainan mematikan yang penuh kejutan. Ketegangan meningkat saat mereka menyadari bahwa mereka bukan pemburu, 
+          melainkan mangsa.
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:13px;">
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">CAST</div>
+              <div style="color:#ddd;">Melissa Barrera, Dan Stevens, Alisha Weir</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">GENRE</div>
+              <div style="color:#ddd;">Horror, Thriller</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">IMDB</div>
+              <div style="color:#ddd;">6.6/10</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">LANGUAGE</div>
+              <div style="color:#ddd;">English</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:10px; margin-top:4px;">
+            <a href="#favModal" class="mf-btn mf-btn-ghost" style="font-size:13px; padding:10px 20px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Add to List
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--info Fall-->
+  <div class="mf-modal" id="infoModal-fall">
+    <a href="#close" class="mf-modal-backdrop"></a>
+    <div class="mf-modal-box" style="max-width:1000px;">
+      <div class="mf-modal-header">
+        <div class="mf-modal-title">
+          <span class="mf-live-dot">●</span> MOVIE INFO
+        </div>
+        <a href="#close" class="mf-modal-close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+      <div style="display:flex;">
+        <img src="assets/posters/Top 7.jpg" alt="Fall "
+          style="width:200px; flex-shrink:0; object-fit:cover;">
+        <div style="padding:24px; display:flex; flex-direction:column; gap:14px;">
+          <div>
+            <div style="font-size:11px; letter-spacing:0.22em; color:#E50914; font-weight:700; margin-bottom:6px;">THRILLER</div>
+            <h2 style="font-family:'Bebas Neue',sans-serif; font-size:34px; line-height:1;">Fall </h2>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; font-size:13px; color:#bbb; align-items:center;">
+            <span style="background:rgba(34,197,94,0.15); color:#4ade80; border:1px solid rgba(34,197,94,0.3); padding:3px 9px; border-radius:4px; font-weight:700; font-size:11px;">6.6/10</span>
+            <span>2022</span><span style="color:#E50914">·</span>
+            <span>13+</span><span style="color:#E50914">·</span>
+            <span>1hr 47m</span>
+          </div>
+          <p style="font-size:14px; color:#ccc; line-height:1.7;">
+          Dua sahabat memanjat menara radio tinggi untuk mengatasi trauma masa lalu. Namun setelah mencapai puncak, mereka terjebak tanpa jalan turun akibat tangga yang rusak. Terisolasi di 
+          ketinggian ekstrem, mereka harus menghadapi rasa takut, keterbatasan sumber daya, serta kondisi cuaca yang berbahaya. Film ini menampilkan perjuangan bertahan hidup yang menegangkan 
+          dan emosional.
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:13px;">
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">CAST</div>
+              <div style="color:#ddd;">Grace Caroline Currey, Virginia Gardner</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">GENRE</div>
+              <div style="color:#ddd;">Thriller, Survival</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">IMDB</div>
+              <div style="color:#ddd;">6.4/10</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">LANGUAGE</div>
+              <div style="color:#ddd;">English</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:10px; margin-top:4px;">
+            <a href="#favModal" class="mf-btn mf-btn-ghost" style="font-size:13px; padding:10px 20px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Add to List
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--info Apex-->
+  <div class="mf-modal" id="infoModal-apex">
+    <a href="#close" class="mf-modal-backdrop"></a>
+    <div class="mf-modal-box" style="max-width:1000px;">
+      <div class="mf-modal-header">
+        <div class="mf-modal-title">
+          <span class="mf-live-dot">●</span> MOVIE INFO
+        </div>
+        <a href="#close" class="mf-modal-close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+      <div style="display:flex;">
+        <img src="assets/posters/Top 8.jpg" alt="Apex  "
+          style="width:200px; flex-shrink:0; object-fit:cover;">
+        <div style="padding:24px; display:flex; flex-direction:column; gap:14px;">
+          <div>
+            <div style="font-size:11px; letter-spacing:0.22em; color:#E50914; font-weight:700; margin-bottom:6px;">ACTION · TRILLER</div>
+            <h2 style="font-family:'Bebas Neue',sans-serif; font-size:34px; line-height:1;">Apex</h2>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; font-size:13px; color:#bbb; align-items:center;">
+            <span style="background:rgba(34,197,94,0.15); color:#4ade80; border:1px solid rgba(34,197,94,0.3); padding:3px 9px; border-radius:4px; font-weight:700; font-size:11px;">6.2/10</span>
+            <span>2021</span><span style="color:#E50914">·</span>
+            <span>17+</span><span style="color:#E50914">·</span>
+            <span>1hr 48m</span>
+          </div>
+          <p style="font-size:14px; color:#ccc; line-height:1.7;">
+          Seorang mantan polisi diberi kesempatan bebas dengan mengikuti permainan berburu manusia di pulau terpencil. Ia menjadi target sekelompok pemburu elit yang memburunya demi hiburan. 
+          Dengan kecerdikan dan pengalaman bertarung, ia mencoba bertahan hidup sekaligus membalikkan keadaan. Permainan ini berubah menjadi pertarungan sengit antara mangsa dan pemburu
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:13px;">
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">CAST</div>
+              <div style="color:#ddd;">Bruce Willis, Neal McDonough</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">GENRE</div>
+              <div style="color:#ddd;">Action, Sci-fi, Thriller</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">IMDB</div>
+              <div style="color:#ddd;">6.2/10</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">LANGUAGE</div>
+              <div style="color:#ddd;">English</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:10px; margin-top:4px;">
+            <a href="#favModal" class="mf-btn mf-btn-ghost" style="font-size:13px; padding:10px 20px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Add to List
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--info If Wishes Could Kill-->
+  <div class="mf-modal" id="infoModal-iwck">
+    <a href="#close" class="mf-modal-backdrop"></a>
+    <div class="mf-modal-box" style="max-width:1000px;">
+      <div class="mf-modal-header">
+        <div class="mf-modal-title">
+          <span class="mf-live-dot">●</span> MOVIE INFO
+        </div>
+        <a href="#close" class="mf-modal-close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+      <div style="display:flex;">
+        <img src="assets/posters/Top 9.jpg" alt="If Wishes Could Kill"
+          style="width:200px; flex-shrink:0; object-fit:cover;">
+        <div style="padding:24px; display:flex; flex-direction:column; gap:14px;">
+          <div>
+            <div style="font-size:11px; letter-spacing:0.22em; color:#E50914; font-weight:700; margin-bottom:6px;">TRILLER</div>
+            <h2 style="font-family:'Bebas Neue',sans-serif; font-size:34px; line-height:1;">If Wishes Could Kill</h2>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; font-size:13px; color:#bbb; align-items:center;">
+            <span style="background:rgba(34,197,94,0.15); color:#4ade80; border:1px solid rgba(34,197,94,0.3); padding:3px 9px; border-radius:4px; font-weight:700; font-size:11px;">5.6/10</span>
+            <span>2026</span><span style="color:#E50914">·</span>
+            <span>13+</span><span style="color:#E50914">·</span>
+            <span>8 Episodes</span>
+          </div>
+          <p style="font-size:14px; color:#ccc; line-height:1.7;">
+          Seorang wanita menemukan cara untuk mewujudkan keinginannya. Awalnya ia merasa puas saat orang-orang yang menyakitinya mengalami nasib buruk. Namun, ia segera menyadari bahwa setiap 
+          keinginan memiliki konsekuensi mematikan. Kekuatan tersebut mulai lepas kendali, bahkan mewujudkan pikiran gelapnya sendiri. Ia harus menghentikan kutukan itu sebelum orang-orang 
+          terdekatnya menjadi korban.
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:13px;">
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">CAST</div>
+              <div style="color:#ddd;">Baek Sun-ho, Kang Mi-na</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">GENRE</div>
+              <div style="color:#ddd;">Thriller</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">IMDB</div>
+              <div style="color:#ddd;">5.6/10</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">LANGUAGE</div>
+              <div style="color:#ddd;">Korean</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:10px; margin-top:4px;">
+            <a href="#favModal" class="mf-btn mf-btn-ghost" style="font-size:13px; padding:10px 20px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Add to List
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--info Thrash -->
+  <div class="mf-modal" id="infoModal-thrash">
+    <a href="#close" class="mf-modal-backdrop"></a>
+    <div class="mf-modal-box" style="max-width:1000px;">
+      <div class="mf-modal-header">
+        <div class="mf-modal-title">
+          <span class="mf-live-dot">●</span> MOVIE INFO
+        </div>
+        <a href="#close" class="mf-modal-close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+      <div style="display:flex;">
+        <img src="assets/posters/Top 10.jpg" alt="Thrash "
+          style="width:200px; flex-shrink:0; object-fit:cover;">
+        <div style="padding:24px; display:flex; flex-direction:column; gap:14px;">
+          <div>
+            <div style="font-size:11px; letter-spacing:0.22em; color:#E50914; font-weight:700; margin-bottom:6px;">TRILLER</div>
+            <h2 style="font-family:'Bebas Neue',sans-serif; font-size:34px; line-height:1;">Thrash</h2>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; font-size:13px; color:#bbb; align-items:center;">
+            <span style="background:rgba(34,197,94,0.15); color:#4ade80; border:1px solid rgba(34,197,94,0.3); padding:3px 9px; border-radius:4px; font-weight:700; font-size:11px;">5.2/10</span>
+            <span>2022</span><span style="color:#E50914">·</span>
+            <span>17+</span><span style="color:#E50914">·</span>
+            <span>1hr 26m</span>
+          </div>
+          <p style="font-size:14px; color:#ccc; line-height:1.7;">
+          Seorang pria yang melakukan perjalanan darat sendirian terjebak di kota kecil terpencil setelah mobilnya rusak. Kota tersebut ternyata menyimpan rahasia kelam berupa ritual perburuan 
+          manusia. Ia menjadi target kelompok pemuja setan yang menjadikannya tumbal. Dengan kondisi terbatas, ia harus berjuang mati-matian untuk melarikan diri dari teror yang mengintai di 
+          setiap sudut.
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:13px;">
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">CAST</div>
+              <div style="color:#ddd;">David J. Plescia, Arlyn Moore</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">GENRE</div>
+              <div style="color:#ddd;">Horror, Thriller</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">IMDB</div>
+              <div style="color:#ddd;">5.2/10</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">LANGUAGE</div>
+              <div style="color:#ddd;">English</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:10px; margin-top:4px;">
+            <a href="#favModal" class="mf-btn mf-btn-ghost" style="font-size:13px; padding:10px 20px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Add to List
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--info Avatar : The Way of Water-->
+  <div class="mf-modal" id="infoModal-avatar">
+    <a href="#close" class="mf-modal-backdrop"></a>
+    <div class="mf-modal-box" style="max-width:1000px;">
+      <div class="mf-modal-header">
+        <div class="mf-modal-title">
+          <span class="mf-live-dot">●</span> MOVIE INFO
+        </div>
+        <a href="#close" class="mf-modal-close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+      <div style="display:flex;">
+        <img src="assets/posters/adv10.jpg" alt="Avatar : The Way of Water"
+          style="width:200px; flex-shrink:0; object-fit:cover;">
+        <div style="padding:24px; display:flex; flex-direction:column; gap:14px;">
+          <div>
+            <div style="font-size:11px; letter-spacing:0.22em; color:#E50914; font-weight:700; margin-bottom:6px;">ACTION · ADVENTURE</div>
+            <h2 style="font-family:'Bebas Neue',sans-serif; font-size:34px; line-height:1;">Avatar : The Way of Water</h2>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; font-size:13px; color:#bbb; align-items:center;">
+            <span style="background:rgba(34,197,94,0.15); color:#4ade80; border:1px solid rgba(34,197,94,0.3); padding:3px 9px; border-radius:4px; font-weight:700; font-size:11px;">7.5/10</span>
+            <span>2022</span><span style="color:#E50914">·</span>
+            <span>13+</span><span style="color:#E50914">·</span>
+            <span>3h 12m</span>
+          </div>
+          <p style="font-size:14px; color:#ccc; line-height:1.7;">
+          Kisah Jake Sully dan Neytiri yang kini hidup sebagai keluarga di Pandora bersama anak-anak mereka. Lebih dari satu dekade setelah kejadian film pertama, mereka menghadapi ancaman baru 
+          dari manusia yang kembali ke Pandora untuk melanjutkan eksploitasi sumber daya. Untuk melindungi keluarganya, Jake membawa mereka mencari perlindungan ke wilayah laut dan bergabung dengan 
+          suku Metkayina. Di sana, mereka harus beradaptasi dengan lingkungan baru sekaligus menghadapi konflik yang semakin besar. Film ini menonjolkan tema keluarga, pengorbanan, serta perjuangan 
+          mempertahankan rumah dari ancaman luar.
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:13px;">
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">CAST</div>
+              <div style="color:#ddd;">Sam Worthington, Zoe Saldaña, Sigourney Weaver</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">GENRE</div>
+              <div style="color:#ddd;">Action, Adventure, Fantasy, Sci-Fi</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">IMDB</div>
+              <div style="color:#ddd;">7.5/10</div>
+            </div>
+            <div>
+              <div style="color:#666; font-size:11px; letter-spacing:0.1em; margin-bottom:3px;">LANGUAGE</div>
+              <div style="color:#ddd;">English</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:10px; margin-top:4px;">
+            <a href="#favModal" class="mf-btn mf-btn-ghost" style="font-size:13px; padding:10px 20px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Add to List
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!--list-->
+  <div class="mf-modal" id="myListModal">
+    <a href="#close" class="mf-modal-backdrop"></a>
+    <div class="mf-modal-box" style="max-width:680px;">
+      <div class="mf-modal-header">
+        <div class="mf-modal-title">
+          <span class="mf-live-dot">●</span> MY LIST
+        </div>
+        <a href="#close" class="mf-modal-close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+      <div style="padding:24px;">
+        <div id="myListEmpty" style="text-align:center; padding:40px 0; color:#555; font-size:14px; display:none;">
+          <div style="font-family:'Bebas Neue',sans-serif; font-size:28px; margin-bottom:8px; color:#333;">Belum ada film</div>
+          Tambahkan film dengan klik tombol <span style="color:#E50914">+</span> di card mana saja.
+        </div>
+        <div id="myListGrid" style="
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 14px;
+          max-height: 420px;
+          overflow-y: auto;
+          overflow-x: hidden;
+          padding-right: 4px;
+          scrollbar-width: thin;
+        ">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Navbar active link on click
+    document.querySelectorAll('.mf-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelectorAll('.mf-nav-link').forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+
+    // Card hover: play/pause trailer video
+    document.querySelectorAll('.mf-card').forEach(card => {
+      const video = card.querySelector('.mf-card-video');
+      if (!video) return;
+      card.addEventListener('mouseenter', () => video.play());
+      card.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+    });
+
+    // Close with Escape key
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  </script>
+
+  <script>
+    const heroSlider = document.querySelector('.mf-hero-slider');
+
+    document.querySelector('.hero-next').onclick = () => {
+      heroSlider.scrollBy({ left: window.innerWidth, behavior: 'smooth' });
+    };
+
+    document.querySelector('.hero-prev').onclick = () => {
+      heroSlider.scrollBy({ left: -window.innerWidth, behavior: 'smooth' });
+    };
+  </script>
+
+  <script>
+  // My List dengan localStorage
+  let myList = JSON.parse(localStorage.getItem('moodflix-mylist') || '[]');
+
+  document.querySelectorAll('.add-to-list').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const title  = btn.dataset.title;
+      const meta   = btn.dataset.meta;
+      const poster = btn.dataset.poster;
+
+      // cek duplikat
+      const exists = myList.find(f => f.title === title);
+      if (!exists) {
+        myList.push({ title, meta, poster });
+        // simpan ke localStorage
+        localStorage.setItem('moodflix-mylist', JSON.stringify(myList));
+      }
+
+      renderMyList();
+    });
+  });
+
+function renderMyList() {
+  const grid  = document.getElementById('myListGrid');
+  const empty = document.getElementById('myListEmpty');
+  const count = document.getElementById('myListCount');
+
+  count.textContent = myList.length;
+  count.style.display = myList.length > 0 ? 'inline' : 'none';
+
+  if (myList.length === 0) {
+    empty.style.display = 'block';
+    grid.innerHTML = '';
+    return;
+  }
+
+  empty.style.display = 'none';
+  grid.innerHTML = myList.map(f => `
+    <div style="
+      border-radius: 8px;
+      overflow: hidden;
+      background: #141414;
+      border: 1px solid rgba(255,255,255,0.06);
+    ">
+      <img src="${f.poster}" alt="${f.title}"
+        style="width:100%; aspect-ratio:2/3; object-fit:cover; display:block;"
+        onerror="this.style.background='#1a1a1a'; this.style.minHeight='180px'">
+      <div style="padding:10px;">
+        <div style="font-family:'Bebas Neue',sans-serif; font-size:15px; margin-bottom:3px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${f.title}</div>
+        <div style="font-size:10px; color:#888; margin-bottom:8px;">${f.meta}</div>
+        <button onclick="removeFromList('${f.title}')"
+          style="font-size:11px; color:#E50914; background:none; border:1px solid rgba(229,9,20,0.3); border-radius:4px; padding:4px 0; cursor:pointer; width:100%;">
+          Remove
+        </button>
+      </div>
+    </div>
+  `).join('');
+}
+
+  function removeFromList(title) {
+    myList = myList.filter(f => f.title !== title);
+    // update localStorage setelah remove
+    localStorage.setItem('moodflix-mylist', JSON.stringify(myList));
+    renderMyList();
+  }
+
+  // init — langsung render saat halaman load
+  renderMyList();
+
+
+  // pause video saat modal ditutup
+document.querySelectorAll('.mf-modal').forEach(modal => {
+  window.addEventListener('hashchange', () => {
+    const video = modal.querySelector('video');
+    if (video && !modal.matches(':target')) {
+      video.pause();
+      video.currentTime = 0;
+    }
+  });
+});
+  </script>
+
+
+</body>
+</html>
